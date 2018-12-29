@@ -1,0 +1,16 @@
+/**
+ *
+ */
+package <%= config['project_name'] %>;
+
+/**
+ *
+ */
+public class <%= config['project_name'].capitalize %> {
+  /**
+   *
+   */
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}

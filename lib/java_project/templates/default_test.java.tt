@@ -1,0 +1,11 @@
+/**
+ *
+ */
+package <%= config['project_name'] %>;
+
+/**
+ *
+ */
+public class <%= config['project_name'].capitalize %>Test {
+  // Put tests in here.
+}

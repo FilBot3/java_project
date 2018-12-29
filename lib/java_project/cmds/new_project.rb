@@ -12,6 +12,13 @@ module JavaProject
              type: :string,
              desc: 'Name of the new Java Project.'
 
+    def config
+      config = {
+        'project_name' => project_name,
+      }
+      return config
+    end
+
     def self.source_root
       File.join(File.dirname(__FILE__), '..', 'templates')
     end
@@ -26,15 +33,15 @@ module JavaProject
     end
 
     def create_project_base_files
-      template('build.xml.tt', project_name + '/build.xml')
-      template('README.md.tt', project_name + '/README.md')
-      template('Rakefile.rb.tt', project_name + '/Rakefile.rb')
-      template('gitignore.tt', project_name + '/.gitignore')
+      template('build.xml.tt', project_name + '/build.xml', config)
+      template('README.md.tt', project_name + '/README.md', config)
+      template('Rakefile.rb.tt', project_name + '/Rakefile.rb', config)
+      template('gitignore.tt', project_name + '/.gitignore', config)
     end
 
     def create_project_java_files
-      template('default_main.java.tt', project_name + '/src/main/java/' + project_name.capitalize + '.java')
-      template('default_test.java.tt', project_name + '/src/test/java/' + project_name.capitalize + '.java')
+      template('default_main.java.tt', project_name + '/src/main/java/' + project_name.capitalize + '.java', config)
+      template('default_test.java.tt', project_name + '/src/test/java/' + project_name.capitalize + '.java', config)
     end
   end
 end
