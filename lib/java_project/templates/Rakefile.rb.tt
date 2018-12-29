@@ -6,10 +6,10 @@
 # the Ant Tasks you're using in the Ant Lib folder.
 require 'ant'
 
-PROJECT_NAME = 'Packages'.freeze
+PROJECT_NAME = '<%= config['project_name'].capitalize %>'.freeze
 MAIN_SRC_DIR = 'src/main/java'.freeze
 TEST_SRC_DIR = 'src/test/java'.freeze
-MAIN_CLASS = 'com.zetcode.Packages'.freeze
+MAIN_CLASS = '<%= config['project_name'].capitalize %>'.freeze
 BUILD_DIR = 'build'.freeze
 CLASSES_DIR = "#{BUILD_DIR}/classes".freeze
 JARS_DIR = "#{BUILD_DIR}/jars".freeze
@@ -117,10 +117,5 @@ namespace :java do
   desc 'Generate the JavaDocs.'
   task doc: ['java:setup_compile'] do
     ant.javadoc(sourcepath: MAIN_SRC_DIR, destdir: DOCS_DIR)
-  end
-
-  desc 'Run JRuby File.'
-  task run_jruby: ['java:compile'] do
-    sh 'jruby jruby_junit_example_01.rb'
   end
 end

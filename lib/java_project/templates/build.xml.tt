@@ -1,9 +1,9 @@
-<project name="SampleClass" basedir="." default="main">
+<project name="<%= config['project_name'].capitalize %>" basedir="." default="main">
     <property name="src.dir"        value="src" />
     <property name="build.dir"      value="build" />
     <property name="classes.dir"    value="${build.dir}/classes" />
     <property name="jar.dir"        value="${build.dir}/jars" />
-    <property name="main-class"     value="sample.SampleClass" />
+    <property name="main-class"     value="<%= config['project_name'].capitalize %>" />
     <property name="test.class.dir" value="${classes.dir}/test" />
     <property name="doc.dir"        value="docs" />
     <!-- Setting the Classpath for compliations
