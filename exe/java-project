@@ -1,0 +1,7 @@
+#!ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+require 'java_project/cli'
+
+JavaProject::CLI.start(ARGV)
