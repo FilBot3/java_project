@@ -9,7 +9,7 @@ require 'ant'
 PROJECT_NAME = '<%= config['project_name'].capitalize %>'.freeze
 MAIN_SRC_DIR = 'src/main/java'.freeze
 TEST_SRC_DIR = 'src/test/java'.freeze
-MAIN_CLASS = '<%= config['project_name'].capitalize %>'.freeze
+MAIN_CLASS = '<%= config['project_name'] %>.<%= config['project_name'].capitalize %>'.freeze
 BUILD_DIR = 'build'.freeze
 CLASSES_DIR = "#{BUILD_DIR}/classes".freeze
 JARS_DIR = "#{BUILD_DIR}/jars".freeze
